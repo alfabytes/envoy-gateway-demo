@@ -1,0 +1,12 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: BackendTrafficPolicy
+metadata:
+  name: circuit-breakers-app-traffic-policy
+spec:
+  targetRefs:
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
+      name: circuit-breakers-app-httproute
+  circuitBreaker:
+    maxPendingRequests: 50
+    maxParallelRequests: 100

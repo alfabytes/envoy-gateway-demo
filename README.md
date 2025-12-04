@@ -15,6 +15,12 @@ A comprehensive collection of practical examples demonstrating various features 
 This repository contains hands-on examples showcasing different Envoy Gateway features:
 
 - **Backend Routing** - Basic HTTP routing and service discovery
+- **Circuit Breakers** - Fault tolerance and resilience patterns
+- **Client Traffic Policy** - Client-side traffic management and policies
+- **Connection Limits** - Rate limiting and connection management
+- **Direct Response** - Static response handling without backend services
+- **Failover** - High availability and automatic failover mechanisms
+- **Fault Injection** - Testing resilience with controlled failures
 
 Each example includes:
 
@@ -107,6 +113,20 @@ Basic HTTP routing example showing how to route traffic to backend services usin
 - Service discovery
 - Hostname-based routing
 - Path-based matching
+
+### 2. Circuit Breakers
+
+**Location:** [`02-circuit-breakers/`](02-circuit-breakers/)
+
+Demonstrates circuit breaker patterns to prevent cascading failures and improve system resilience when backend services are experiencing issues. Learn how to configure BackendTrafficPolicy with circuit breaker settings.
+
+**Key Concepts:**
+
+- Circuit breaker policies
+- Failure detection
+- Automatic recovery
+- Fault tolerance
+- BackendTrafficPolicy configuration
 
 ## Cleanup
 
