@@ -128,6 +128,34 @@ Demonstrates circuit breaker patterns to prevent cascading failures and improve 
 - Fault tolerance
 - BackendTrafficPolicy configuration
 
+### 3. Client Traffic Policy
+
+**Location:** [`03-client-traffic-policy/`](03-client-traffic-policy/)
+
+Shows how to apply policies to client traffic, including TCP keepalive settings, timeouts, and connection management. Learn how to configure ClientTrafficPolicy to control how Envoy Gateway handles connections from clients.
+
+**Key Concepts:**
+
+- Client-side policies
+- TCP keepalive configuration
+- Connection lifecycle management
+- ClientTrafficPolicy configuration
+- Gateway-level policy targeting
+
+### 4. Connection Limit
+
+**Location:** [`04-connection-limit/`](04-connection-limit/)
+
+Example of limiting concurrent connections from clients to protect your Envoy Gateway and backend services from being overwhelmed. Learn how to configure ClientTrafficPolicy with connection limits.
+
+**Key Concepts:**
+
+- Connection limits
+- Resource protection
+- Backpressure handling
+- ClientTrafficPolicy configuration
+- Concurrent connection management
+
 ## Cleanup
 
 To remove all resources created by the examples:

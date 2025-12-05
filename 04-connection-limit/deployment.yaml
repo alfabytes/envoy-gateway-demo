@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: circuit-breakers-app
+  name: connection-limit-app
   namespace: default
   labels:
-    app: circuit-breakers-app
+    app: connection-limit-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: circuit-breakers-app
+      app: connection-limit-app
   template:
     metadata:
       labels:
-        app: circuit-breakers-app
+        app: connection-limit-app
     spec:
       containers:
         - image: gcr.io/k8s-staging-gateway-api/echo-basic:v20231214-v1.0.0-140-gf544a46e
           imagePullPolicy: IfNotPresent
-          name: circuit-breakers-app
+          name: connection-limit-app
           ports:
             - containerPort: 3000
           env:

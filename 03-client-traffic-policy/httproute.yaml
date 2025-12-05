@@ -3,7 +3,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: circuit-breakers-app-httproute
+  name: client-traffic-policy-app-httproute
   namespace: default
 spec:
   parentRefs:
@@ -12,12 +12,12 @@ spec:
       name: eg
       namespace: envoy-gateway-system
   hostnames:
-    - "circuit-breakers-app.alfabytes.xyz"
+    - "client-traffic-policy-app.alfabytes.xyz"
   rules:
     - backendRefs:
         - group: gateway.envoyproxy.io
           kind: Backend
-          name: circuit-breakers-app-backend
+          name: client-traffic-policy-app-backend
           port: 3000
       matches:
         - path:
@@ -27,10 +27,10 @@ spec:
 apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: Backend
 metadata:
-  name: circuit-breakers-app-backend
+  name: client-traffic-policy-app-backend
   namespace: default
 spec:
   endpoints:
     - fqdn:
-        hostname: circuit-breakers-app.default.svc.cluster.local
+        hostname: client-traffic-policy-app.default.svc.cluster.local
         port: 3000

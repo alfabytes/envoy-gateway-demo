@@ -18,7 +18,7 @@ spec:
         - group: gateway.envoyproxy.io
           kind: Backend
           name: backend-routing-app-backend
-          port: 8080
+          port: 3000
       matches:
         - path:
             type: PathPrefix
@@ -33,4 +33,4 @@ spec:
   endpoints:
     - fqdn:
         hostname: backend-routing-app.default.svc.cluster.local
-        port: 8080
+        port: 3000
